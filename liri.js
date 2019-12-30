@@ -33,6 +33,9 @@ inquirer.prompt([
     } else if (userInput.userChoice === "movie-this") {
             omdb(userInput.userInput)
 
+    console.log("=================================================");
+    console.log("");
+
     } else {
         (userInput.userChoice === "concert-this")
         bandsInTown(userInput.userInput)

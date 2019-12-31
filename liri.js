@@ -82,7 +82,7 @@ function Spotifyme(userInput) {
                     fs.appendFile("log.txt", "************ Song Information ************" + " \n" + songReturn[i].album.artists[0].name + " \n" +
                         songReturn[i].name + " \n" +
                         songReturn[i].preview_url + " \n" +
-                        songReturn[i].album.name + "\n" + " \n" + " \n", function(err) {
+                        songReturn[i].album.name + "\n" + " \n" + " \n", function (err) {
                             if (err) {
                                 console.log(err);
                             } else {
@@ -145,6 +145,9 @@ function omdb(userInput) {
 //Bands in Town Function returns the Venue, City and State, and the show date
 //function is called upon selecting "concert-this" in the inquirer options
 function bandsInTown(userInput) {
+    if (userInput === "") {
+        userInput = "Eagles";
+    }
     axios
         .get("https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp")
         .then(function (response) {
@@ -155,14 +158,14 @@ function bandsInTown(userInput) {
                     moment(bandReturn[i].datetime).format("L") + " \n");
 
                 fs.appendFile("log.txt", "************ Concert Information ************" + " \n" + bandReturn[i].venue.name + " \n" +
-                bandReturn[i].venue.city + " " + bandReturn[i].venue.region + " \n" +
-                moment(bandReturn[i].datetime).format("L") + " \n" + " \n" + " \n", function(err) {
-                    if (err) {
-                        console.log(err);
-                    } else {
-                        console.log("Your search results have been logged!")
-                    }
-                })
+                    bandReturn[i].venue.city + " " + bandReturn[i].venue.region + " \n" +
+                    moment(bandReturn[i].datetime).format("L") + " \n" + " \n" + " \n", function (err) {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            console.log("Your search results have been logged!")
+                        }
+                    })
             }
         })
         .catch(function (error) {

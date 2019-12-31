@@ -50,10 +50,10 @@ inquirer.prompt([
 //and the album the song is from.
 //This function is called when spotify-this-song is selected in inquirer options
 function Spotifyme(userInput) {
-    var spotify = new Spotify(keys.spotify)
-    if (userInput === undefined) {
+    if (userInput === "") {
         userInput = "Sound of Silence";
     }
+    var spotify = new Spotify(keys.spotify)
     spotify.search({
         type: "track",
         query: userInput
@@ -80,6 +80,9 @@ function Spotifyme(userInput) {
 //This function is called upon selecting "movie-this" in inquirer options
 
 function omdb(userInput) {
+    if (userInput === "") {
+        userInput = "Mr Nobody";
+    }
 axios
     .get("http://www.omdbapi.com/?apikey=trilogy&t=" + userInput)
     .then(function(response) {

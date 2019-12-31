@@ -23,5 +23,8 @@ Once installed, type "node liri.js" in your bash terminal.
 ******************************************************************************
 
 Walkthrough
-![Walkthrough pictures](images/Walkthrough-Step-1.jpg)
-<img src="images/Walkthrough-Step-1.jpg" alt="Walkthrough Step 1" width="300" height="300">
+<img src="images/Walkthrough-Step-1.jpg" alt="Walkthrough Step 1" width="650" height="377">
+<img src="images/Walkthrough-Step-2.jpg" alt="Walkthrough Step 2" width="650" height="377">
+<img src="images/Walkthrough-Step-3.jpg" alt="Walkthrough Step 3" width="650" height="377">
+<img src="images/Walkthrough-Step-4.jpg" alt="Walkthrough Step 4" width="650" height="377">
+<img src="images/Walkthrough-Step-5.jpg" alt="Walkthrough Step 5" width="650" height="377">

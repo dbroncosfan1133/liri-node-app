@@ -23,4 +23,4 @@ Once installed, type "node liri.js" in your bash terminal.
 ******************************************************************************
 
 Walkthrough
-![Walkthrough pictures](./images/Walkthrough Step 1.jpg)
+![Walkthrough pictures](images/Walkthrough-Step-1.jpg)

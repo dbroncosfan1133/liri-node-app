@@ -8,9 +8,9 @@ This is an application that uses the Spotify API, OMDB API, and Bands in Town AP
 
 "movie-this": This will take the entered movie and search the OMDB API, it will return the title, year released, IMDB and Rotten Tomatoes ratings, Country, language, plot, and the actors.
 
-!!!Important!!!
+++++++ Important ++++++
 ******************************************************************************
-You must have the modules listed below installed on your PC in the same file location as cloned files.  Node can be installed here: https://nodejs.org/en/.  All other packages can be installed in a bash terminal using "npm install <your npm package>" (do not include the <>).
+You must have the modules listed below installed on your PC in the same file location as cloned files.  Node can be installed here: https://nodejs.org/en/.  All other packages can be installed in a bash terminal using npm.
 
 -node.js
 -node-spotify-api (you must have your own API key for this API)
@@ -21,3 +21,6 @@ You must have the modules listed below installed on your PC in the same file loc
 Once installed, type "node liri.js" in your bash terminal.
 
 ******************************************************************************
+
+Walkthrough
+![Walkthrough pictures](./images/Walkthrough Step 1.jpg)

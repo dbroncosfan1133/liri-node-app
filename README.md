@@ -1,8 +1,8 @@
 # liri-node-app
 
-This is an application that uses the Spotify API, OMDB API, and Bands in Town API.  You initialize the application by typing "node liri.js" in your bash terminal.  You will be presented with 4 options to select from using your arrow keys.  Once you select an option you can type whatever you want to search for pertaining to your initial choice.
+This is an application that uses the Spotify API, OMDB API, and Bands in Town API.  You start the application by typing "node liri.js" in your bash terminal.  You will be presented with 4 options to select from using your arrow keys.  Once you select an option you can type whatever you want to search for pertaining to your initial choice.
 
-"concert-this": This will take the entered band and search for tour locations, dates and venues of the search.
+"concert-this": This will take the entered band and search the Bands in Town API for tour locations, dates and venues of the search.
 
 "spotify-this-song": This will take the entered song and search the Spotify API, it will return the artist name, song name, a preview url from spotify (if available), and the album name.
 
@@ -10,7 +10,7 @@ This is an application that uses the Spotify API, OMDB API, and Bands in Town AP
 
 ++++++ Important ++++++
 ******************************************************************************
-You must have the modules listed below installed on your PC in the same file location as cloned files.  Node.js can be installed here: https://nodejs.org/en/.  All other packages can be installed in a bash terminal using npm.
+You must have the modules listed below installed on your PC in the same file location as the cloned files.  Node.js can be installed here: https://nodejs.org/en/.  All other packages can be installed in a bash terminal using npm.  You must run "npm init" in bash BEFORE installing the npm packages.
 
 -node.js
 <br>

@@ -27,6 +27,11 @@ You must have the modules listed below installed on your PC in the same file loc
 Once installed, type "node liri.js" in your bash terminal.
 
 ******************************************************************************
+Watch it work:
+<br>
+<video width width="650" height="377" controls>
+    <source src="images/Liri-Node-App.m4v" type="video/m4v">
+</video>
 
 Walkthrough:
 <br>

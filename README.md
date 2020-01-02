@@ -29,9 +29,7 @@ Once installed, type "node liri.js" in your bash terminal.
 ******************************************************************************
 Watch it work:
 <br>
-<video width width="650" height="377" controls>
-    <source src="images/Liri-Node-App.m4v" type="video/m4v">
-</video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WRqnldapKZE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Walkthrough:
 <br>

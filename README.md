@@ -8,6 +8,8 @@ This is an application that uses the Spotify API, OMDB API, and Bands in Town AP
 
 "movie-this": This will take the entered movie and search the OMDB API, it will return the title, year released, IMDB and Rotten Tomatoes ratings, Country, language, plot, and the actors.
 
+"do-what-it-says": This will read the random.txt file and pass the data through the correct function.  Note: You can change the data in the random.txt file.  If you make a change you must use the same format, i.e. what you want to do, your search query. (spotify-this-song, I want it that way), (concert-this, Eagles), (movie-this, Full Metal Jacket).
+
 ++++++ Important ++++++
 ******************************************************************************
 You must have the modules listed below installed on your PC in the same file location as the cloned files.  Node.js can be installed here: https://nodejs.org/en/.  All other packages can be installed in a bash terminal using npm.  You must run "npm init" in bash BEFORE installing the npm packages.

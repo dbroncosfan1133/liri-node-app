@@ -185,9 +185,20 @@ function readTxt() {
         if (error) {
             return console.log(error);
         }
-        var modData = data;
-        modData = modData.split(",").pop();
+        var beforeData = data;
+        beforeData = beforeData.split(",").shift();
 
-        Spotifyme(modData);
+        var afterData = data;
+        afterData = afterData.split(", ").pop();
+
+        if (beforeData === "spotify-this-song") {
+            Spotifyme(afterData);
+
+        } else if (beforeData === "movie-this") {
+            omdb(afterData);
+
+        } else if
+            (beforeData === "concert-this")
+            bandsInTown(afterData);
     })
-}
+};

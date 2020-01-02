@@ -85,11 +85,10 @@ function Spotifyme(userInput) {
                         songReturn[i].album.name + "\n" + " \n" + " \n", function (err) {
                             if (err) {
                                 console.log(err);
-                            } else {
-                                console.log("Your search results have been logged!");
                             }
                         })
                 }
+                console.log(i + " results have been logged!");
             }
         })
 };
@@ -162,11 +161,10 @@ function bandsInTown(userInput) {
                     moment(bandReturn[i].datetime).format("L") + " \n" + " \n" + " \n", function (err) {
                         if (err) {
                             console.log(err);
-                        } else {
-                            console.log("Your search results have been logged!")
                         }
                     })
             }
+            console.log(i + " results have been logged!")
         })
         .catch(function (error) {
             if (error.response) {

@@ -24,7 +24,7 @@ You must have the dependencies listed below installed on your PC in the same fil
 <br>
 -inquirer
 <br>
--dotenv:  Crete your own .env file, this is where you will store your Spotify API ID and Secret.
+-dotenv:  Create your own .env file, this is where you will store your Spotify API ID and Secret.
 
 Once installed, type "node liri.js" in your bash terminal.
 

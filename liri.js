@@ -1,3 +1,5 @@
+//All of the required librarys and files to run this application
+
 require("dotenv").config();
 var Spotify = require('node-spotify-api')
 var keys = require("./keys.js");
@@ -9,6 +11,7 @@ var fs = require("fs");
 var input = process.argv;
 var userInput = input.slice(2).join(" ");
 
+//Inquirer options upon running node liri.js.  This starts the whole application.
 
 inquirer.prompt([
 
@@ -46,17 +49,16 @@ inquirer.prompt([
     } else {
         (userInput.userChoice === "do-what-it-says")
         readTxt()
-        // bandsInTown(data)
 
         console.log("=================================================");
         console.log("");
     }
 })
 
-debugger
 //Spotify function returns artists, name of the song, a spotify preview link, (if available)
 //and the album the song is from.
 //This function is called when spotify-this-song is selected in inquirer options
+
 function Spotifyme(userInput) {
     if (userInput === "") {
         userInput = "Sound of Silence";
@@ -143,6 +145,7 @@ function omdb(userInput) {
 
 //Bands in Town Function returns the Venue, City and State, and the show date
 //function is called upon selecting "concert-this" in the inquirer options
+
 function bandsInTown(userInput) {
     if (userInput === "") {
         userInput = "Eagles";
@@ -180,11 +183,16 @@ function bandsInTown(userInput) {
         });
 }
 
+
+//This function will read the random.txt file and pass the data through the appropriate api function.
+//This function is called when you select "do-what-it-says" in the inquirer options
+
 function readTxt() {
     fs.readFile("random.txt", "utf8", function (error, data) {
         if (error) {
             return console.log(error);
         }
+
         var beforeData = data;
         beforeData = beforeData.split(",").shift();
 

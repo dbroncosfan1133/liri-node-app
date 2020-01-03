@@ -12,49 +12,51 @@ var input = process.argv;
 var userInput = input.slice(2).join(" ");
 
 //Inquirer options upon running node liri.js.  This starts the whole application.
+function startApp() {
+    inquirer.prompt([
 
-inquirer.prompt([
+        {
+            type: "list",
+            name: "userChoice",
+            message: "What do you want to do?",
+            choices: ["concert-this", "spotify-this-song", "movie-this", "do-what-it-says"]
+        },
 
-    {
-        type: "list",
-        name: "userChoice",
-        message: "What do you want to do?",
-        choices: ["concert-this", "spotify-this-song", "movie-this", "do-what-it-says"]
-    },
+        {
+            type: "input",
+            name: "userInput",
+            message: "What do you want to search?"
+        }
+    ]).then(function (userInput) {
+        if (userInput.userChoice === "spotify-this-song") {
+            Spotifyme(userInput.userInput)
 
-    {
-        type: "input",
-        name: "userInput",
-        message: "What do you want to search?"
-    }
-]).then(function (userInput) {
-    if (userInput.userChoice === "spotify-this-song") {
-        Spotifyme(userInput.userInput)
+            console.log("=================================================");
+            console.log("");
 
-        console.log("=================================================");
-        console.log("");
+        } else if (userInput.userChoice === "movie-this") {
+            omdb(userInput.userInput)
 
-    } else if (userInput.userChoice === "movie-this") {
-        omdb(userInput.userInput)
+            console.log("=================================================");
+            console.log("");
 
-        console.log("=================================================");
-        console.log("");
+        } else if (userInput.userChoice === "concert-this") {
+            bandsInTown(userInput.userInput)
 
-    } else if (userInput.userChoice === "concert-this") {
-        bandsInTown(userInput.userInput)
+            console.log("=================================================");
+            console.log("");
 
-        console.log("=================================================");
-        console.log("");
+        } else {
+            (userInput.userChoice === "do-what-it-says")
+            readTxt()
 
-    } else {
-        (userInput.userChoice === "do-what-it-says")
-        readTxt()
+            console.log("=================================================");
+            console.log("");
+        }
+    })
+}
 
-        console.log("=================================================");
-        console.log("");
-    }
-})
-
+startApp();
 //Spotify function returns artists, name of the song, a spotify preview link, (if available)
 //and the album the song is from.
 //This function is called when spotify-this-song is selected in inquirer options
@@ -90,8 +92,21 @@ function Spotifyme(userInput) {
                             }
                         })
                 }
-                console.log(i + " results have been logged!");
+                console.log(i + " results have been logged!\n");
             }
+            inquirer.prompt([
+                {
+                    type: "confirm",
+                    name: "confirmChoice",
+                    message: "Would you like to try another command?"
+                }
+            ]).then(function(confirmChoice) {
+                if (confirmChoice.confirmChoice === true) {
+                    startApp();
+                } else {
+                    return
+                }
+            })
         })
 };
 
@@ -124,8 +139,21 @@ function omdb(userInput) {
                     if (err) {
                         console.log(err);
                     } else {
-                        console.log("\nYour search result has been logged!")
+                        console.log("\nYour search result has been logged!\n")
                     }
+                    inquirer.prompt([
+                        {
+                            type: "confirm",
+                            name: "confirmChoice",
+                            message: "Would you like to try another command?"
+                        }
+                    ]).then(function(confirmChoice) {
+                        if (confirmChoice.confirmChoice === true) {
+                            startApp();
+                        } else {
+                            return
+                        }
+                    })
                 })
         })
         .catch(function (error) {
@@ -165,9 +193,24 @@ function bandsInTown(userInput) {
                         if (err) {
                             console.log(err);
                         }
+                        
                     })
+                    
             }
-            console.log(i + " results have been logged!")
+            console.log(i + " results have been logged!\n")
+            inquirer.prompt([
+                {
+                    type: "confirm",
+                    name: "confirmChoice",
+                    message: "Would you like to try another command?"
+                }
+            ]).then(function(confirmChoice) {
+                if (confirmChoice.confirmChoice === true) {
+                    startApp();
+                } else {
+                    return
+                }
+            })
         })
         .catch(function (error) {
             if (error.response) {

@@ -37,7 +37,7 @@ Once installed, type "node liri.js" in your bash terminal.
 ******************************************************************************
 Watch it work:
 <br>
-<a href="https://www.youtube.com/embed/WRqnldapKZE">https://www.youtube.com/embed/WRqnldapKZE</a>
+<a href="https://youtu.be/u0ZGrG-b5jE">https://youtu.be/u0ZGrG-b5jE</a>
 
 Walkthrough:
 <br>
